@@ -11,7 +11,7 @@
 
 ### SETUP
 
-Create your database and tables using the provided `data.sql` file. Start the server.
+[x] Create your database and tables using the provided `data.sql` file. Start the server.
 
 ```
 npm install
