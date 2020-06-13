@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class Submit extends Component {
 
   goToBeginning = () => {
-    this.props.history.push('/');
+    // this.props.history.push('/');
   }
 
   render() {

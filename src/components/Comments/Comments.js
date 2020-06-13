@@ -5,17 +5,32 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
 
+    state = {
+        commentsData: ''
+    }
 
-  goToReview = () => {
-    this.props.history.push('/Review');
-  }
+    submitCommentsData = () => {
+        this.props.dispatch({
+            type: 'SUBMIT_COMMENTS_DATA',
+            payload: this.state.commentsData
+        })
+        this.props.history.push('/Review');
+    }
+
+    captureCommentsData = (event) => {
+        console.log('event.target.value', event.target.value);
+        this.setState({
+            commentsData: event.target.value
+        })
+    }
 
   render() {
     return (
       <div className="App">
           <h2>4 of 6: Comments</h2>
-          <textarea rows="10" cols="20"></textarea>
-          <button onClick={this.goToReview}>Page 5: Review</button>
+          <textarea rows="10" cols="20" onChange={this.captureCommentsData} placeholder="Enter your stupid opinion here"></textarea>
+          <button onClick={this.submitCommentsData}>Page 5: Review</button>
+          <p>{JSON.stringify(this.props.reduxStore)}</p>
       </div>
     );
   }

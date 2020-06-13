@@ -5,17 +5,37 @@ import { connect } from 'react-redux';
 
 class Support extends Component {
 
+    state = {
+        supportData: ''
+    }
 
-  goToComments = () => {
+//   goToComments = () => {
+//     // this.props.history.push('/Comments');
+//   }
+
+  submitSupportData = () => {
+    this.props.dispatch({
+        type: 'SUBMIT_SUPPORT_DATA',
+        payload: this.state.supportData
+    })
     this.props.history.push('/Comments');
-  }
+}
+
+captureSupportData = (event) => {
+    console.log('event.target.value', event.target.value);
+    this.setState({
+        supportData: event.target.value
+    })
+}
 
   render() {
     return (
       <div className="App">
           <h2>3 of 6: Support</h2>
-          <input type="number"></input>
-          <button onClick={this.goToComments}>Page 4: Comments</button>
+          {/* {/* <input type="number"></input> */}
+          <input type="number" onChange={this.captureSupportData}></input>
+          <button onClick={this.submitSupportData}>Page 4: Comments</button>
+          <p>{JSON.stringify(this.props.reduxStore)}</p>
       </div>
     );
   }

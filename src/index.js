@@ -11,34 +11,67 @@ import logger from 'redux-logger';
 
 
 // Reducers
-const firstReducer = (state = {}, action) => {
-    if(action.type === 'GO_TO_FEELING') {
-        console.log('in firstReducer - state, action.type:', state, action.type);
-    } return state;
+// const goToFeeling = ( state = [], action) => {
+//     if( action.type === 'GO_TO_FEELING' ) {
+//         console.log('Reducer goToFeeling - state, action.type:', state, action.type);
+//     } return state;
+// };
 
-    // switch (action.type) {
-    //     case 'GO_TO_FEELING':
-    //         console.log('SUCCESS');
-    //         const idk = action.payload;
-    //         return idk;
-    //     default:
-    //         console.log('ERROR with testReducer');
-    //         return state   
-    // }
-}
+// Reducers
+const startSurvey = (state = [], action) => {
+    switch(action.type) {
+        case 'START_SURVEY':
+            return [...state, action.payload]
+        default: 
+            return state;
+    }
+};
 
-const secondReducer = (state = {}, action) => {
-    if(action.type === 'GO_TO_UNDERSTANDING') {
-        console.log('in secondReducer. state, action.type:', state, action.type);
-    } return {};
-}
+const submitFeelingData = (state = [], action) => {
+    switch(action.type) {
+        case 'SUBMIT_FEELING_DATA':
+            return [...state, action.payload]
+        default: 
+            return state;
+    }
+};
+
+const submitUnderstandingData = (state = [], action) => {
+    switch(action.type) {
+        case 'SUBMIT_UNDERSTANDING_DATA':
+            return [...state, action.payload]
+        default: 
+            return state;
+    }
+};
+
+const submitSupportData = (state = [], action) => {
+    switch(action.type) {
+        case 'SUBMIT_SUPPORT_DATA':
+            return [...state, action.payload]
+        default: 
+            return state;
+    }
+};
+
+const submitCommentsData = (state = [], action) => {
+    switch(action.type) {
+        case 'SUBMIT_COMMENTS_DATA':
+            return [...state, action.payload]
+        default: 
+            return state;
+    }
+};
 
 
 // Create Redux Store
 const reduxStore = createStore(
     combineReducers({
-      firstReducer,
-      secondReducer
+        startSurvey,
+        submitFeelingData,
+        submitUnderstandingData,
+        submitSupportData,
+        submitCommentsData
       
     }),
     applyMiddleware(logger)

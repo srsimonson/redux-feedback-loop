@@ -4,23 +4,34 @@ import axios from 'axios';
 // Things I added
 import { connect } from 'react-redux';
 
-
 class Feeling extends Component {
+    
+    state = {
+        feelingData: ''
+    }
 
-  goToUnderstanding = () => {
+  submitFeelingData = () => {
     this.props.dispatch({
-        type: 'GO_TO_UNDERSTANDING',
-        // payload: response.data
+        type: 'SUBMIT_FEELING_DATA',
+        payload: this.state.feelingData
     })
     this.props.history.push('/Understanding');
+  }
+
+  captureFeelingData = (event) => {
+      console.log('event.target.value', event.target.value);
+      this.setState({
+          feelingData: event.target.value
+      })
   }
 
   render() {
     return (
       <div className="App">
         <h2>1 of 6: Feeling</h2>
-        <input type="number"></input>
-        <button onClick={this.goToUnderstanding}>Page 2: Understanding</button>
+        <input type="number" onChange={this.captureFeelingData}></input>
+        <button onClick={this.submitFeelingData}>Page 2: Understanding</button>
+        <p>{JSON.stringify(this.props.reduxStore)}</p>
       </div>
     );
   }

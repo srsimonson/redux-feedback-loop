@@ -5,16 +5,14 @@ import { connect } from 'react-redux';
 
 class Home extends Component {
 
-  goToFeeling = () => {
+  startSurvey = () => {
       console.log('hello from home.js');
       
-    //Dispatch an action to the store. Connect gives us acceess
+// Home doesn't need dispatch or connect to store. Just a GO_TO_FEELING
     this.props.dispatch({
-        type: 'GO_TO_FEELING',
-        // payload: response.data
+        type: 'START_SURVEY',
     })
-
-    //   this.props.history.push('/Feeling');
+      this.props.history.push('/Feeling');
   }
 
   render() {
@@ -23,7 +21,7 @@ class Home extends Component {
             <h2>0 of 6: HOME</h2>
             
             <div>
-                <button onClick={this.goToFeeling}>Page 1: Feeling</button>
+                <button onClick={this.startSurvey}>Page 1: Start Survey</button>
             </div>
 
       </div>

@@ -43,7 +43,7 @@ The parts:
 [x] Clicking next should move the user to the appropriate step in the process.
 
 ### Figure out REDUX
-> NOTE: As a baseline requirement, you must use Redux to store your data across views.
+> [x] NOTE: As a baseline requirement, you must use Redux to store your data across views.
 
 ### Input Validation
 
