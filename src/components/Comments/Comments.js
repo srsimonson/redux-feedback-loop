@@ -13,12 +13,9 @@ class Comments extends Component {
   render() {
     return (
       <div className="App">
-            <h2>4 of 6: Comments</h2>
-            
-            <div>
-                <button onClick={this.goToReview}>Page 5: Review</button>
-            </div>
-
+          <h2>4 of 6: Comments</h2>
+          <textarea rows="10" cols="20"></textarea>
+          <button onClick={this.goToReview}>Page 5: Review</button>
       </div>
     );
   }

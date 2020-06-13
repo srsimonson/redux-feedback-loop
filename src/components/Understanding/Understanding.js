@@ -14,12 +14,9 @@ class Understanding extends Component {
   render() {
     return (
       <div className="App">
-            <h2>2 of 6: Understanding</h2>
-            
-            <div>
-                <button onClick={this.goToSupport}>Page 3: Support</button>
-            </div>
-
+          <h2>2 of 6: Understanding</h2>
+          <input type="number"></input>
+          <button onClick={this.goToSupport}>Page 3: Support</button>
       </div>
     );
   }

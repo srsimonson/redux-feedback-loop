@@ -52,15 +52,19 @@ The parts:
 
 ## THE REVIEW COMPONENT
 
-The last step of the process will allow the user to review their feedback. Users are not able to change their input on this step or go back for Base Mode. 
+[] The last step of the process will allow the user to review their feedback.
+[] Users are not able to change their input on this step or go back for Base Mode. 
 
 ![comments](wireframes/review-active.png)
 
 ## SUBMIT THE FEEDBACK
 
-The `Review` step needs to have a submit button which will be clicked on to actually submit the completed feedback to the server.
+[] The `Review` step needs to have a submit button which will be clicked on to actually submit the completed feedback to the server.
 
-When the submit button is clicked, save the submission in the database. The user should see a submission success page. They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
+[] When the submit button is clicked, save the submission in the database. 
+[] The user should see a submission success page. 
+    [] They can then click the button to take a new survey, 
+        [] which needs to reset all the data and go back to the first step.
 
 ![understanding](wireframes/page-five.png)
 

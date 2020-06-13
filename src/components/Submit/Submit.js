@@ -13,12 +13,8 @@ class Submit extends Component {
   render() {
     return (
       <div className="App">
-            <h2>6 of 6: Success</h2>
-            
-            <div>
-                <button onClick={this.goToBeginning}>Page 0: Home</button>
-            </div>
-
+          <h2>6 of 6: Success</h2>
+          <button onClick={this.goToBeginning}>Page 0: Home</button>
       </div>
     );
   }

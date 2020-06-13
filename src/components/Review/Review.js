@@ -13,18 +13,13 @@ class Review extends Component {
   render() {
     return (
       <div className="App">
-            <h2>5 of 6: Review</h2>
-            
-            <h3>Results</h3>
-            <p>Feeling:</p>
-            <p>Understanding:</p>
-            <p>Supported:</p>
-            <p>Comments:</p>
-
-            <div>
-                <button onClick={this.goToSubmitSuccess}>Page 6: Submit</button>
-            </div>
-
+          <h2>5 of 6: Review</h2>
+          <h3>Results</h3>
+          <p>Feeling:</p>
+          <p>Understanding:</p>
+          <p>Supported:</p>
+          <p>Comments:</p>
+          <button onClick={this.goToSubmitSuccess}>Page 6: Submit</button>
       </div>
     );
   }

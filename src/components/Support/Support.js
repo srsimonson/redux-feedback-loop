@@ -13,12 +13,9 @@ class Support extends Component {
   render() {
     return (
       <div className="App">
-            <h2>3 of 6: Support</h2>
-            
-            <div>
-                <button onClick={this.goToComments}>Page 4: Comments</button>
-            </div>
-
+          <h2>3 of 6: Support</h2>
+          <input type="number"></input>
+          <button onClick={this.goToComments}>Page 4: Comments</button>
       </div>
     );
   }

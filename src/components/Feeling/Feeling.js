@@ -15,11 +15,8 @@ class Feeling extends Component {
     return (
       <div className="App">
         <h2>1 of 6: Feeling</h2>
-        
-        <div>
-            <button onClick={this.goToUnderstanding}>Page 2: Understanding</button>
-        </div>
-
+        <input type="number"></input>
+        <button onClick={this.goToUnderstanding}>Page 2: Understanding</button>
       </div>
     );
   }
