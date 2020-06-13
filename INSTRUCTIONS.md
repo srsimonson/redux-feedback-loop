@@ -26,8 +26,6 @@ npm run client
 
 ### ADD NEW FEEDBACK
 
-> NOTE: As a baseline requirement, you must use Redux to store your data across views.
-
 Create a multi-part form that allows users to leave feedback for today. 
 There will be 4 views for the form parts.
 
@@ -43,6 +41,9 @@ The parts:
 
 [x] While there is no nav bar, each part of the form should be at its own route.
 [x] Clicking next should move the user to the appropriate step in the process.
+
+### Figure out REDUX
+> NOTE: As a baseline requirement, you must use Redux to store your data across views.
 
 ### Input Validation
 

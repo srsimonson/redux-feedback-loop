@@ -8,7 +8,10 @@ import { connect } from 'react-redux';
 class Feeling extends Component {
 
   goToUnderstanding = () => {
-    console.log('in goToUnderstanding');
+    this.props.dispatch({
+        type: 'GO_TO_UNDERSTANDING',
+        // payload: response.data
+    })
     this.props.history.push('/Understanding');
   }
 

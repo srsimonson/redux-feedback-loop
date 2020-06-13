@@ -6,8 +6,15 @@ import { connect } from 'react-redux';
 class Home extends Component {
 
   goToFeeling = () => {
-    console.log('in goToFeeling');
-    this.props.history.push('/Feeling');
+      console.log('hello from home.js');
+      
+    //Dispatch an action to the store. Connect gives us acceess
+    this.props.dispatch({
+        type: 'GO_TO_FEELING',
+        // payload: response.data
+    })
+
+    //   this.props.history.push('/Feeling');
   }
 
   render() {

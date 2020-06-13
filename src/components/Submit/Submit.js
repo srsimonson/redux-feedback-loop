@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 class Submit extends Component {
 
-
   goToBeginning = () => {
     this.props.history.push('/');
   }
@@ -14,6 +13,7 @@ class Submit extends Component {
     return (
       <div className="App">
           <h2>6 of 6: Success</h2>
+          <p>Thank you for filling this out. Click here to start over.</p>
           <button onClick={this.goToBeginning}>Page 0: Home</button>
       </div>
     );

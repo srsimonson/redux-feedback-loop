@@ -7,6 +7,8 @@ class Review extends Component {
 
 
   goToSubmitSuccess = () => {
+
+    // axios.post
     this.props.history.push('/Submit');
   }
 

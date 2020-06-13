@@ -11,23 +11,34 @@ import logger from 'redux-logger';
 
 
 // Reducers
-const testReducer = (state=[], action) => {
-    switch (action.type) {
-        case 'I_D_K':
-            console.log('in testReducer');
-            const idk = action.payload;
-            return idk;
-        default:
-            console.log('Error with testReducer');
-            return state   
-    }
+const firstReducer = (state = {}, action) => {
+    if(action.type === 'GO_TO_FEELING') {
+        console.log('in firstReducer - state, action.type:', state, action.type);
+    } return state;
+
+    // switch (action.type) {
+    //     case 'GO_TO_FEELING':
+    //         console.log('SUCCESS');
+    //         const idk = action.payload;
+    //         return idk;
+    //     default:
+    //         console.log('ERROR with testReducer');
+    //         return state   
+    // }
+}
+
+const secondReducer = (state = {}, action) => {
+    if(action.type === 'GO_TO_UNDERSTANDING') {
+        console.log('in secondReducer. state, action.type:', state, action.type);
+    } return {};
 }
 
 
 // Create Redux Store
 const reduxStore = createStore(
     combineReducers({
-      testReducer
+      firstReducer,
+      secondReducer
       
     }),
     applyMiddleware(logger)
