@@ -7,7 +7,7 @@ class Comments extends Component {
 
 
   goToReview = () => {
-    console.log('in goToReview');
+    this.props.history.push('/Review');
   }
 
   render() {

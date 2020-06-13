@@ -14,11 +14,12 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
+// import Success from '../Success/Success';
 
 class App extends Component {
 
   componentDidMount() {
-    console.log('in componentDidMount');
+    console.log('is componentDidMount even needed?');
     
   }
 
@@ -43,6 +44,7 @@ class App extends Component {
           <Route path="/Comments" component={Comments}/>
           <Route path="/Review" component={Review}/>
           <Route path="/Submit" component={Submit}/>
+          {/* <Route path="/Success" component={Success}/> */}
         </Router>
       </div>
     );

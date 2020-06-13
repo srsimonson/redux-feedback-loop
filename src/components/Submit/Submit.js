@@ -7,7 +7,7 @@ class Submit extends Component {
 
 
   goToBeginning = () => {
-    console.log('in goToBeginning');
+    this.props.history.push('/');
   }
 
   render() {

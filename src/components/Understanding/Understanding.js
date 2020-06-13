@@ -8,8 +8,7 @@ class Understanding extends Component {
 
 
   goToSupport = () => {
-    console.log('in goToSupport');
-  }
+    this.props.history.push('/Support');  }
 
   render() {
     return (

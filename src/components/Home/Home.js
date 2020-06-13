@@ -7,6 +7,7 @@ class Home extends Component {
 
   goToFeeling = () => {
     console.log('in goToFeeling');
+    this.props.history.push('/Feeling');
   }
 
   render() {

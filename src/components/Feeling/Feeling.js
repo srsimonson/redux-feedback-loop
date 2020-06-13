@@ -9,6 +9,7 @@ class Feeling extends Component {
 
   goToUnderstanding = () => {
     console.log('in goToUnderstanding');
+    this.props.history.push('/Understanding');
   }
 
   render() {

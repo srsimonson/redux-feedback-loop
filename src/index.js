@@ -10,10 +10,25 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 
+// Reducers
+const testReducer = (state=[], action) => {
+    switch (action.type) {
+        case 'I_D_K':
+            console.log('in testReducer');
+            const idk = action.payload;
+            return idk;
+        default:
+            console.log('Error with testReducer');
+            return state   
+    }
+}
+
+
 // Create Redux Store
 const reduxStore = createStore(
     combineReducers({
-      // Reducer functions go here
+      testReducer
+      
     }),
     applyMiddleware(logger)
   )

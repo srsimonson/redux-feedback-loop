@@ -7,7 +7,7 @@ class Review extends Component {
 
 
   goToSubmitSuccess = () => {
-    console.log('in goToSubmitSuccess');
+    this.props.history.push('/Submit');
   }
 
   render() {

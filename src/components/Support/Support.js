@@ -7,7 +7,7 @@ class Support extends Component {
 
 
   goToComments = () => {
-    console.log('in goToComments');
+    this.props.history.push('/Comments');
   }
 
   render() {
