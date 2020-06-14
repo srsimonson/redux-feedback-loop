@@ -9,19 +9,19 @@ class Comments extends Component {
         commentsData: ''
     }
 
+    captureCommentsData = (event) => {
+        console.log('event.target.value', event.target.value);
+        this.setState({
+            commentsData: event.target.value
+        })
+    }
+
     submitCommentsData = () => {
         this.props.dispatch({
             type: 'SUBMIT_COMMENTS_DATA',
             payload: this.state.commentsData
         })
         this.props.history.push('/Review');
-    }
-
-    captureCommentsData = (event) => {
-        console.log('event.target.value', event.target.value);
-        this.setState({
-            commentsData: event.target.value
-        })
     }
 
   render() {

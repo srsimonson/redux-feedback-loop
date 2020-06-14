@@ -10,19 +10,19 @@ class Feeling extends Component {
         feelingData: ''
     }
 
+  captureFeelingData = (event) => {
+    console.log('event.target.value', event.target.value);
+    this.setState({
+        feelingData: event.target.value
+    })
+}
+
   submitFeelingData = () => {
     this.props.dispatch({
         type: 'SUBMIT_FEELING_DATA',
         payload: this.state.feelingData
     })
     this.props.history.push('/Understanding');
-  }
-
-  captureFeelingData = (event) => {
-      console.log('event.target.value', event.target.value);
-      this.setState({
-          feelingData: event.target.value
-      })
   }
 
   render() {

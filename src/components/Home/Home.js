@@ -8,7 +8,8 @@ class Home extends Component {
   startSurvey = () => {
       console.log('hello from home.js');
       
-// Home doesn't need dispatch or connect to store. Just a GO_TO_FEELING
+// Home doesn't need dispatch or connect to store. Just a GO_TO_FEELING. Or remove from redux altogether because it's not contributing data anyway. Just this.props.history.push...
+
     this.props.dispatch({
         type: 'START_SURVEY',
     })

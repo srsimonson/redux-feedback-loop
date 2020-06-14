@@ -9,14 +9,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
-// Reducers
-// const goToFeeling = ( state = [], action) => {
-//     if( action.type === 'GO_TO_FEELING' ) {
-//         console.log('Reducer goToFeeling - state, action.type:', state, action.type);
-//     } return state;
-// };
-
 // Reducers
 const startSurvey = (state = [], action) => {
     switch(action.type) {

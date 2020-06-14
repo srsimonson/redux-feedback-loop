@@ -8,10 +8,13 @@ class Support extends Component {
     state = {
         supportData: ''
     }
-
-//   goToComments = () => {
-//     // this.props.history.push('/Comments');
-//   }
+    
+    captureSupportData = (event) => {
+        console.log('event.target.value', event.target.value);
+        this.setState({
+            supportData: event.target.value
+        })
+    }
 
   submitSupportData = () => {
     this.props.dispatch({
@@ -19,13 +22,6 @@ class Support extends Component {
         payload: this.state.supportData
     })
     this.props.history.push('/Comments');
-}
-
-captureSupportData = (event) => {
-    console.log('event.target.value', event.target.value);
-    this.setState({
-        supportData: event.target.value
-    })
 }
 
   render() {
