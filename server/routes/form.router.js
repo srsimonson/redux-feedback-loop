@@ -3,20 +3,18 @@ const router = express.Router();
 
 const pool = require('../modules/pool');
 
-// router.post('/',  (req, res) => {
-//   let newBook = req.body;
-//   console.log(`Adding book`, newBook);
-
-//   let queryText = `INSERT INTO "books" ("author", "title")
-//                    VALUES ($1, $2);`;
-//   pool.query(queryText, [newBook.author, newBook.title])
-//     .then(result => {
-//       res.sendStatus(201);
-//     })
-//     .catch(error => {
-//       console.log(`Error adding new book`, error);
-//       res.sendStatus(500);
-//     });
-// });
+router.post('/', (req, res) => {
+    console.log('req.body (look in server terminal!)', req.body[0], req.body[1], req.body[2], req.body[3]);
+    let sqlQuery = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+                    VALUES ($1, $2, $3, $4);`;
+    pool.query(sqlQuery, [req.body[0], req.body[1], req.body[2], req.body[3]])
+    .then(result => {
+        res.sendStatus(201);
+    })
+    .catch(error => {
+        console.log('ERROR with form.router POST:', error);
+        res.sendStatus(500);
+    })
+})
 
 module.exports = router;

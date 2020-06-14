@@ -8,10 +8,18 @@ class Review extends Component {
 
   submitSurveyClicked = (event) => {
       event.preventDefault();
-      console.log('this.props.reduxStore:', this.props.reduxStore.submitSurveyData[0]);
+      console.log('this.props.reduxStore:', this.props.reduxStore.submitSurveyData);
       
-    //   axios.post('/form', this.props.reduxStore)
-      // this.props.history.push('/Submit');
+      axios.post('/form', this.props.reduxStore.submitSurveyData)
+      .then(response => {
+        console.log('POST /form SUCCESS')
+
+      })
+      .catch(error => {
+          console.log('ERROR with POST /form', error);
+          
+      })
+      this.props.history.push('/Submit');
   }
 
   render() {
