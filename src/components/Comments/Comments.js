@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-// import { HashRouter as Router, Route, Link} from 'react-router-dom';
 
 class Comments extends Component {
 
@@ -10,7 +8,6 @@ class Comments extends Component {
     }
 
     captureCommentsData = (event) => {
-        console.log('event.target.value', event.target.value);
         this.setState({
             commentsData: event.target.value
         })
@@ -37,6 +34,5 @@ class Comments extends Component {
 }
 
 
-const mapStateToProps = (reduxStore) => ({ reduxStore })
-
+const mapStateToProps = (reduxStore) => ({ reduxStore });
 export default connect(mapStateToProps)(Comments);

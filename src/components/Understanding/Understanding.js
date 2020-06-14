@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-// import { HashRouter as Router, Route, Link} from 'react-router-dom';
-
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class Understanding extends Component {
     
@@ -11,7 +9,6 @@ class Understanding extends Component {
     }
     
     captureUnderstandingData = (event) => {
-        console.log('event.target.value', event.target.value);
         this.setState({
             understandingData: event.target.value
         })
@@ -27,17 +24,20 @@ class Understanding extends Component {
 
   render() {
     return (
+
       <div className="App">
+          <ValidatorForm ref="form" onSubmit={this.submitUnderstandingData} onError={errors => console.log(errors)}>
+          
           <h2>2 of 6: Understanding</h2>
+          <TextValidator onChange={this.captureUnderstandingData} validators={['required']} errorMessages={['this field is required']}/>
           <input type="number" onChange={this.captureUnderstandingData}></input>
           <button onClick={this.submitUnderstandingData}>Page 3: Support</button>
-          {/* <p>{JSON.stringify(this.props.reduxStore)}</p> */}
+          </ValidatorForm>
       </div>
     );
   }
 }
 
 
-const mapStateToProps = (reduxStore) => ({ reduxStore })
-
+const mapStateToProps = (reduxStore) => ({ reduxStore });
 export default connect(mapStateToProps)(Understanding);

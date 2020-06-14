@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
-
 const formRouter = require('./routes/form.router')
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -12,7 +11,6 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use('/form', formRouter);
-
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 
 // Things I added
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link} from 'react-router-dom';
+import { HashRouter as Router, Route} from 'react-router-dom';
 
 // Import pages here 
 import Home from '../Home/Home';
@@ -16,11 +15,6 @@ import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
 
 class App extends Component {
-
-  componentDidMount() {
-    console.log('is componentDidMount even needed?');
-    
-  }
 
   render() {
     return (
@@ -45,6 +39,5 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (reduxStore) => ({ reduxStore })
-
+const mapStateToProps = (reduxStore) => ({ reduxStore });
 export default connect(mapStateToProps)(App);
