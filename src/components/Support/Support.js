@@ -8,7 +8,7 @@ class Support extends Component {
     state = {
         supportData: ''
     }
-    
+
     captureSupportData = (event) => {
         console.log('event.target.value', event.target.value);
         this.setState({
@@ -31,7 +31,7 @@ class Support extends Component {
           {/* {/* <input type="number"></input> */}
           <input type="number" onChange={this.captureSupportData}></input>
           <button onClick={this.submitSupportData}>Page 4: Comments</button>
-          <p>{JSON.stringify(this.props.reduxStore)}</p>
+          {/* <p>{JSON.stringify(this.props.reduxStore)}</p> */}
       </div>
     );
   }

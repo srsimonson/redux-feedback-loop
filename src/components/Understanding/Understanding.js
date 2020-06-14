@@ -31,7 +31,7 @@ class Understanding extends Component {
           <h2>2 of 6: Understanding</h2>
           <input type="number" onChange={this.captureUnderstandingData}></input>
           <button onClick={this.submitUnderstandingData}>Page 3: Support</button>
-          <p>{JSON.stringify(this.props.reduxStore)}</p>
+          {/* <p>{JSON.stringify(this.props.reduxStore)}</p> */}
       </div>
     );
   }

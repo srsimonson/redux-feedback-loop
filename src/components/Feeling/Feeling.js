@@ -31,7 +31,7 @@ class Feeling extends Component {
         <h2>1 of 6: Feeling</h2>
         <input type="number" onChange={this.captureFeelingData}></input>
         <button onClick={this.submitFeelingData}>Page 2: Understanding</button>
-        <p>{JSON.stringify(this.props.reduxStore)}</p>
+        {/* <p>{JSON.stringify(this.props.reduxStore)}</p> */}
       </div>
     );
   }
