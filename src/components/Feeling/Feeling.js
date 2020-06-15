@@ -14,7 +14,6 @@ class Feeling extends Component {
     }
 
   submitFeelingData = () => {
-      console.log('hi', this.state.feelingData);
       if (this.state.feelingData === '' || null) {
           alert ('Please submit score before moving on to next question.')
       } else {

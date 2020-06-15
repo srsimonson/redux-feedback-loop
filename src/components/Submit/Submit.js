@@ -3,9 +3,25 @@ import { connect } from 'react-redux';
 
 class Submit extends Component {
 
-  goToBeginning = () => {
-    this.props.history.push('/');
-  }
+    state = {
+        IDK: ''
+    }
+
+    captureSupportData = (event) => {
+        this.setState({
+            supportData: event.target.value
+        })
+    }
+
+  submitSupportData = () => {
+      console.log('hi', this.state;
+        this.props.dispatch({
+        type: 'RESET_STORE',
+        payload: this.state
+    })
+    // this.props.history.push('/');
+    }
+}
 
   render() {
     return (
@@ -13,6 +29,7 @@ class Submit extends Component {
           <h2>6 of 6: Success</h2>
           <p>Thank you for filling this out. Click here to start over.</p>
           <button onClick={this.goToBeginning}>Page 0: Home</button>
+          <p>{JSON.stringify(this.props.reduxStore.submitSurveyData)}</p> 
       </div>
     );
   }

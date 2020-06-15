@@ -25,6 +25,11 @@ class Understanding extends Component {
       }
   }
 
+  backButtonClicked = () => {
+      console.log('in back to feeling');
+      this.props.history.push('/Feeling');
+  }
+
   render() {
     return (
 
@@ -32,6 +37,9 @@ class Understanding extends Component {
           <h2>2 of 6: Understanding</h2>
           <input type="number" onChange={this.captureUnderstandingData}></input>
           <button onClick={this.submitUnderstandingData}>Page 3: Support</button>
+
+          {/* Back button still needs to clear data of previous answer */}
+          <button onClick={this.backButtonClicked}>Back TEST</button>
       </div>
     );
   }
