@@ -20,27 +20,29 @@ const submitSurveyData = (state = [], action) => {
             return [...state, action.payload];
         case 'SUBMIT_COMMENTS_DATA':
             return [...state, action.payload]
+        case 'RESET_STORE':
+            state = []
         default: 
             return state;
     }
 };
-const resetStore = (state = [], action) => {
-    switch(action.type) {
-        case 'RESET_STORE':
-            return state
-        default:
-            return state
-    }
-}
+// const resetStore = (state = [], action) => {
+//     switch(action.type) {
+//         case 'RESET_STORE':
+//             state = null
+//         default:
+//             return state
+//     }
+// }
 
 // Create Redux Store
 const reduxStore = createStore(
     combineReducers({
         submitSurveyData,
-        resetStore
+        // resetStore
     }),
     applyMiddleware(logger)
   )
-  
+
   ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
