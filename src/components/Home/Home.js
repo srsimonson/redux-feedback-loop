@@ -12,6 +12,7 @@ class Home extends Component {
         <div className="App">
           <h2>0 of 6: HOME</h2>
           <button onClick={this.startSurvey}>Page 1: Start Survey</button>
+          <p>{JSON.stringify(this.props.reduxStore.submitSurveyData)}</p>
         </div>
     );
   }

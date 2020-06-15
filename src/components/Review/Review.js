@@ -26,7 +26,6 @@ class Review extends Component {
                 <p>Supported: {this.props.reduxStore.submitSurveyData[2]}</p>
                 <p>Comments: {this.props.reduxStore.submitSurveyData[3]}</p>
                 <button onClick={this.submitSurveyClicked}>Page 6: Submit</button>
-                {/* <p>{JSON.stringify(this.props.reduxStore.submitSurveyData)}</p>  */}
       </div>
     );
   }
