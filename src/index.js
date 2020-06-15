@@ -22,24 +22,16 @@ const submitSurveyData = (state = [], action) => {
             return [...state, action.payload]
         case 'RESET_STORE':
             state = []
+            // break;
         default: 
             return state;
     }
 };
-// const resetStore = (state = [], action) => {
-//     switch(action.type) {
-//         case 'RESET_STORE':
-//             state = null
-//         default:
-//             return state
-//     }
-// }
 
 // Create Redux Store
 const reduxStore = createStore(
     combineReducers({
         submitSurveyData,
-        // resetStore
     }),
     applyMiddleware(logger)
   )

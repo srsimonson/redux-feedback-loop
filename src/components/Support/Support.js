@@ -29,9 +29,10 @@ class Support extends Component {
   render() {
     return (
       <div className="App">
-          <h2>3 of 6: Support</h2>
-          <input type="number" onChange={this.captureSupportData}></input>
-          <button onClick={this.submitSupportData}>Page 4: Comments</button>
+          <h2>How supported do you feel by staff?</h2>
+          <p>1=low 5=high</p>
+          <input type="number" max="5" onChange={this.captureSupportData}></input>
+          <button onClick={this.submitSupportData}>Next: Comments</button>
       </div>
     );
   }

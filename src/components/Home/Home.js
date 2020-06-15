@@ -10,9 +10,9 @@ class Home extends Component {
   render() {
     return (
         <div className="App">
-          <h2>0 of 6: HOME</h2>
-          <button onClick={this.startSurvey}>Page 1: Start Survey</button>
-          <p>{JSON.stringify(this.props.reduxStore.submitSurveyData)}</p>
+          <p>Please take a moment to fill out this survey.</p>
+          <button onClick={this.startSurvey}> Start Survey</button>
+          {/* <p>{JSON.stringify(this.props.reduxStore.submitSurveyData)}</p> */}
         </div>
     );
   }

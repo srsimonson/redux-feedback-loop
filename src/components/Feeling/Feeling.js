@@ -29,9 +29,10 @@ class Feeling extends Component {
   render() {
     return (
       <div className="App">
-          <h2>1 of 6: Feeling</h2>
-          <input type="number" onChange={this.captureFeelingData}></input>
-          <button onClick={this.submitFeelingData}>Page 2: Understanding</button>
+          <h2>How are you feeling about the course this week?</h2>
+          <p>1=low 5=high</p>
+          <input type="number" max="5" onChange={this.captureFeelingData}></input>
+          <button onClick={this.submitFeelingData}>Next: Understanding</button>
       </div>
     );
   }

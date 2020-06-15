@@ -19,13 +19,12 @@ class Review extends Component {
   render() {
     return (
       <div className="App">
-          <h2>5 of 6: Review</h2>
-            <h3>Results</h3>
+          <h2>Review</h2>
                 <p>Feeling: {this.props.reduxStore.submitSurveyData[0]}</p>
                 <p>Understanding: {this.props.reduxStore.submitSurveyData[1]}</p>
                 <p>Supported: {this.props.reduxStore.submitSurveyData[2]}</p>
                 <p>Comments: {this.props.reduxStore.submitSurveyData[3]}</p>
-                <button onClick={this.submitSurveyClicked}>Page 6: Submit</button>
+                <button onClick={this.submitSurveyClicked}>Submit Feedback</button>
       </div>
     );
   }

@@ -29,9 +29,10 @@ class Understanding extends Component {
     return (
 
       <div className="App">
-          <h2>2 of 6: Understanding</h2>
-          <input type="number" onChange={this.captureUnderstandingData}></input>
-          <button onClick={this.submitUnderstandingData}>Page 3: Support</button>
+          <h2>How well are you understanding the material?</h2>
+          <p>1=low 5=high</p>
+          <input type="number" max="5" onChange={this.captureUnderstandingData}></input>
+          <button onClick={this.submitUnderstandingData}>Next: Support</button>
       </div>
     );
   }
