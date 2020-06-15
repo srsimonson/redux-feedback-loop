@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import {Field, reduxForm} from 'redux-form';
 
 class Feeling extends Component {
 
@@ -37,7 +36,6 @@ class Feeling extends Component {
     );
   }
 }
-
 
 const mapStateToProps = (reduxStore) => ({ reduxStore });
 export default connect(mapStateToProps)(Feeling);

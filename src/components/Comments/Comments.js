@@ -27,12 +27,10 @@ class Comments extends Component {
           <h2>4 of 6: Comments</h2>
           <textarea rows="10" cols="20" onChange={this.captureCommentsData} placeholder="Enter your comment here."></textarea>
           <button onClick={this.submitCommentsData}>Page 5: Review</button>
-          {/* <p>{JSON.stringify(this.props.reduxStore)}</p> */}
       </div>
     );
   }
 }
-
 
 const mapStateToProps = (reduxStore) => ({ reduxStore });
 export default connect(mapStateToProps)(Comments);
