@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+// import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class Understanding extends Component {
     
@@ -15,24 +15,28 @@ class Understanding extends Component {
     }
 
     submitUnderstandingData = () => {
-        this.props.dispatch({
-            type: 'SUBMIT_UNDERSTANDING_DATA',
-            payload: this.state.understandingData
-        })
-        this.props.history.push('/Support');
-    }
+        if (this.state.understandingData === '' || null) {
+            alert ('Please submit score before moving on to next question.')
+        } else {
+          this.props.dispatch({
+          type: 'SUBMIT_UNDERSTANDING_DATA',
+          payload: this.state.understandingData
+      })
+      this.props.history.push('/Support');
+      }
+  }
 
   render() {
     return (
 
       <div className="App">
-          <ValidatorForm ref="form" onSubmit={this.submitUnderstandingData} onError={errors => console.log(errors)}>
+          {/* <ValidatorForm ref="form" onSubmit={this.submitUnderstandingData} onError={errors => console.log(errors)}> */}
           
           <h2>2 of 6: Understanding</h2>
-          <TextValidator onChange={this.captureUnderstandingData} validators={['required']} errorMessages={['this field is required']}/>
+          {/* <TextValidator onChange={this.captureUnderstandingData} validators={['required']} errorMessages={['this field is required']}/> */}
           <input type="number" onChange={this.captureUnderstandingData}></input>
           <button onClick={this.submitUnderstandingData}>Page 3: Support</button>
-          </ValidatorForm>
+          {/* </ValidatorForm> */}
       </div>
     );
   }

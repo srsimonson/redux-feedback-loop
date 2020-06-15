@@ -1,53 +1,43 @@
 import React, { Component } from 'react';
-
-// Things I added
 import { connect } from 'react-redux';
-// import Button from '@material-ui/core/Button';
-import { Button, FormControl } from '@material-ui/core';
+// import {Field, reduxForm} from 'redux-form';
 
 class Feeling extends Component {
-    
+
     state = {
-        feelingData: '',
-        feelingDataError: ''
+        feelingData: ''
     }
 
-  captureFeelingData = (event) => {
-    this.setState({
-        feelingData: event.target.value
-    })
-}
-
-// validate = () => {
-//     if (this.state.feelingData.length < 1) {
-//         return false
-//     }
-// }
+    captureFeelingData = (event) => {
+        this.setState({
+            feelingData: event.target.value
+        })
+    }
 
   submitFeelingData = () => {
-    const validate = validate();
-    
-    if (!validate){
+      console.log('hi', this.state.feelingData);
+      if (this.state.feelingData === '' || null) {
+          alert ('Please submit score before moving on to next question.')
+      } else {
         this.props.dispatch({
-            type: 'SUBMIT_FEELING_DATA',
-            payload: this.state.feelingData
-        })
-        this.props.history.push('/Understanding');
+        type: 'SUBMIT_FEELING_DATA',
+        payload: this.state.feelingData
+    })
+    this.props.history.push('/Understanding');
     }
-  }
+}
 
   render() {
     return (
       <div className="App">
-        <FormControl>
-        <h2>1 of 6: Feeling</h2>
-        <input type="number" onChange={this.captureFeelingData} errorText={this.state.feelingDataError}></input>
-        <Button variant="contained" color="primary" onClick={this.submitFeelingData}>Page 2: Understanding</Button>
-        </FormControl>
+          <h2>1 of 6: Feeling</h2>
+          <input type="number" onChange={this.captureFeelingData}></input>
+          <button onClick={this.submitFeelingData}>Page 2: Understanding</button>
       </div>
     );
   }
 }
+
 
 const mapStateToProps = (reduxStore) => ({ reduxStore });
 export default connect(mapStateToProps)(Feeling);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import {Field, reduxForm} from 'redux-form';
 
 class Support extends Component {
 
@@ -14,11 +15,16 @@ class Support extends Component {
     }
 
   submitSupportData = () => {
-    this.props.dispatch({
+      console.log('hi', this.state.supportData);
+      if (this.state.supportData === '' || null) {
+          alert ('Please submit score before moving on to next question.')
+      } else {
+        this.props.dispatch({
         type: 'SUBMIT_SUPPORT_DATA',
         payload: this.state.supportData
     })
     this.props.history.push('/Comments');
+    }
 }
 
   render() {
